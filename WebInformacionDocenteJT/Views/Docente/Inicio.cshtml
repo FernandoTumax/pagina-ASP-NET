@@ -1,4 +1,4 @@
-﻿@model List<WebInformacionDocenteJT.Models.Contacto>
+﻿@model List<WebInformacionDocenteJT.Models.Docente>
 
 @{
     ViewBag.Title = "Inicio";
@@ -9,10 +9,10 @@
     <div class="col-sm-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h4>Lista de contacto</h4>
+                <h4>Lista de docentes - Universidad Mariano Galvez de Guatemala</h4>
             </div>
             <div class="panel-body">
-                <a class="btn btn-success" href="@Url.Action("Register", "Contacto")" >Crear Nuevo</a>
+                <a class="btn btn-success" href="@Url.Action("Register", "Docente")" >Crear Nuevo</a>
                 <hr />
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -22,20 +22,24 @@
                                 <th>Apellidos</th>
                                 <th>Telefono</th>
                                 <th>Correo</th>
+                                <th>Salario</th>
+                                <th>Fecha Nacimiento</th>
                                 <th style="width:150px"></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (WebInformacionDocenteJT.Models.Contacto item in Model)
+                            @foreach (WebInformacionDocenteJT.Models.Docente item in Model)
                             {
                                 <tr>
                                     <td>@item.Nombres</td>
                                     <td>@item.Apellidos</td>
                                     <td>@item.Telefono</td>
                                     <td>@item.Correo</td>
+                                    <td>@Math.Round(item.Salario, 2)</td>
+                                    <td>@item.FechaNacimiento.ToString("dd-MM-yyyy")</td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar", "Contacto", new { idContacto = item.IdContacto })">Editar</a>
-                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar", "Contacto", new { idContacto = item.IdContacto })">Eliminar</a>
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar", "Docente", new { idDocente = item.IdDocente })">Editar</a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar", "Docente", new { idDocente = item.IdDocente })">Eliminar</a>
                                     </td>
                                 </tr>
                             }

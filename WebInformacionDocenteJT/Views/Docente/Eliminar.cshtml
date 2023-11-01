@@ -1,4 +1,4 @@
-﻿@model WebInformacionDocenteJT.Models.Contacto
+﻿@model WebInformacionDocenteJT.Models.Docente
 
 @{
     ViewBag.Title = "Eliminar";
@@ -16,11 +16,11 @@
                     ¿ Desea eliminar el contacto : @Html.DisplayTextFor(m => m.Nombres) @Html.DisplayTextFor(m => m.Apellidos) ?
                 </div>
 
-                <form action="@Url.Action("DeleteContact", "Contacto")" method="post">
-                    <input type="hidden" readonly class="form-control" name="IdContacto" value="@Html.DisplayTextFor(m => m.IdContacto)" />
+                <form action="@Url.Action("DeleteContact", "Docente")" method="post">
+                    <input type="hidden" readonly class="form-control" name="IdDocente" value="@Html.DisplayTextFor(m => m.IdDocente)" />
 
                     <button type="submit" class="btn btn-danger">Eliminar</button>
-                    <a class="btn btn-primary" href="@Url.Action("Inicio", "Contacto")">Volver</a>
+                    <a class="btn btn-primary" href="@Url.Action("Inicio", "Docente")">Volver</a>
                 </form>
 
             </div>

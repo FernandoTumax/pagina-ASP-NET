@@ -16,7 +16,7 @@ namespace WebInformacionDocenteJT
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Contacto", action = "Inicio", id = UrlParameter.Optional }
+                defaults: new { controller = "Docente", action = "Inicio", id = UrlParameter.Optional }
             );
         }
     }

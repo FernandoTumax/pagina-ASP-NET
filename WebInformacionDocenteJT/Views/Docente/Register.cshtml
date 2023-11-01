@@ -1,0 +1,53 @@
+﻿@model WebInformacionDocenteJT.Models.Docente
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Nuevo Contacto</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Register", "Docente")" method="post">
+                    <div class="form-group">
+                        <label for="txtNombre">Nombres</label>
+                        <input type="text" class="form-control" name="Nombres" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtApellido">Apellidos</label>
+                        <input type="text" class="form-control" name="Apellidos" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtTelefono">Telefono</label>
+                        <input type="text" class="form-control" name="Telefono" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCorreo">Correo</label>
+                        <input type="text" class="form-control" name="Correo" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtSalario">Salario</label>
+                        <input type="number" step="any" class="form-control" name="Salario" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" name="FechaNacimiento" required/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a class="btn btn-danger" href="@Url.Action("Inicio", "Docente")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+         $(function () {
+             $('#datetimepicker1').datetimepicker();
+         });
+    </script>
+</div>
+
+
